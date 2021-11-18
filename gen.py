@@ -9,7 +9,7 @@ def flat_generator(x: list):
 nested_list = [
     ['a', 'b', 'c'],
     ['d', 'e', 'f'],
-    ['g', 'h', 'i']
+    ['g', 5, 'i']
 ]
 
 for item in flat_generator(nested_list):

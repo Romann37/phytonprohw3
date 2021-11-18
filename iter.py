@@ -2,7 +2,7 @@
 
 class FlatIterator:
 	def __init__(self, x: list):
-		self.x = x
+		self.x = [item for i in x for item in i]
 
 	def __iter__(self):
 		self.count = -1
@@ -12,14 +12,14 @@ class FlatIterator:
 		self.count += 1
 		if self.count == len(self.x):
 			raise StopIteration
-		mylist = '\n'.join(self.x[self.count])
-		return mylist
+		return self.x[self.count]
+                
 
 
 nested_list = [
 	['a', 'b', 'c'],
 	['d', 'e', 'f'],
-	['g', 'h', 'i']
+	['g', 7, 'i']
 ]
 for item in FlatIterator(nested_list):
 	print(item)
