@@ -1,8 +1,9 @@
 #Написать генератор, который принимает список списков, и возвращает их плоское представление. 
 def flat_generator(x: list):
     count = 0
+    x = [item for i in x for item in i]
     while count != len(x):
-        yield '\n'.join(x[count])
+        yield x[count]
         count += 1
 
 
